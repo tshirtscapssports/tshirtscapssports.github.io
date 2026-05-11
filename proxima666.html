@@ -37,41 +37,61 @@
 
 <style>
 
-.jersey-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 20px;
-  padding: 20px;
-  background-color: #f4f4f4;
+/* Whole gallery container */
+.gallery{
+    width: 250px;
+    font-family: Arial, sans-serif;
 }
 
-.jersey-card {
-  background: white;
-  border: 1px solid #ddd;
-  text-align: center;
+/* Main image area */
+.main-image{
+    width: 100%;
+    height: 300px;
+    background: #f2f2f2;
+    border: 1px solid #ddd;
+    overflow: hidden;
 }
 
-.image-container {
-  position: relative;
-  background-color: #eee;
+/* Main image */
+.main-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.stock-badge {
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
-  background: rgba(0,0,0,0.5);
-  color: white;
-  padding: 2px 6px;
-  font-size: 12px;
+/* Thumbnail row */
+.thumbnails{
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
 }
 
-.description {
-  font-size: 13px;
-  color: #333;
-  margin-top: 8px;
+/* Each thumbnail box */
+.thumb{
+    width: 50px;
+    height: 50px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.3s;
 }
 
+/* Thumbnail image */
+.thumb img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Active selected thumbnail */
+.thumb.active{
+    border-color: #6ad36a;
+}
+
+/* Hover effect */
+.thumb:hover{
+    transform: scale(1.05);
+}
 
 </style>
 
@@ -984,33 +1004,63 @@ $(document).ready(function () {
 
 
 
+<div class="gallery">
 
+    <!-- Main Image -->
+    <div class="main-image">
+        <img src="https://www.mastercase.mx/1049/2026/proximamente/mx/2/1.png" alt="Jersey">
+    </div>
 
-<div class="jersey-grid">
-  <!-- Repeat this block for each jersey -->
-  <div class="jersey-card">
-    <div class="image-container">
-      <img src="https://www.mastercase.mx/1049/2026/proximamente/mx/2/1.png" alt="Team Name">
-      <span class="stock-badge">7</span>
+    <!-- Thumbnail Images -->
+    <div class="thumbnails">
+
+        <div class="thumb active">
+            <img src="https://www.mastercase.mx/1049/2026/proximamente/mx/2/2.png" alt="">
+        </div>
+
+        <div class="thumb">
+            <img src="https://www.mastercase.mx/1049/2026/proximamente/mx/2/2.png" alt="">
+        </div>
+
+        <div class="thumb">
+            <img src="https://www.mastercase.mx/1049/2026/proximamente/mx/2/2.png" alt="">
+        </div>
+
+        <div class="thumb">
+            <img src="https://www.mastercase.mx/1049/2026/proximamente/mx/2/2.png" alt="">
+        </div>
+
     </div>
-    <div class="jersey-info">
-      <div class="https://www.mastercase.mx/1049/2026/proximamente/mx/2/2.png">
-        <img src="https://www.mastercase.mx/1049/2026/proximamente/mx/1/1.png">
-        <img src="https://www.mastercase.mx/1049/2026/proximamente/mx/1/2.png">
-      </div>
-      <p class="description">26/27 Atletico Nacional Training</p>
-    </div>
-  </div>
+
 </div>
 
 
 
+<script>
 
+const mainImage = document.querySelector(".main-image img");
 
+const thumbs = document.querySelectorAll(".thumb");
 
+thumbs.forEach(thumb => {
 
+    thumb.addEventListener("click", () => {
 
+        // Remove active class
+        thumbs.forEach(t => t.classList.remove("active"));
 
+        // Add active class
+        thumb.classList.add("active");
+
+        // Change main image
+        const imgSrc = thumb.querySelector("img").src;
+
+        mainImage.src = imgSrc;
+    });
+
+});
+
+</script>
 
 
 
