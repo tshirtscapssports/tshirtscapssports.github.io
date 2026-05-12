@@ -32,7 +32,13 @@
 
  
 
+<style> 
+*{ margin:0; padding:0; 
+box-sizing:border-box; } 
 
+.carousel{ width:800px; height:450px; overflow:hidden; border-radius:20px; position:relative; box-shadow:0 10px 30px rgba(0,0,0,0.5); } 
+.slides{ display:flex; width:100%; height:100%; transition:transform 0.8s ease-in-out; } 
+.slides img{ width:100%; height:100%; object-fit:cover; flex-shrink:0; } </style>
 
 
 <style>
@@ -1123,13 +1129,31 @@ thumbs.forEach(thumb => {
       
        <tr>
        <td>
- 	     <h1>*** Men's T-Shirts: Fútbol MX***</h1>
+ 	
+	
+	
+	
+	
+	
+	
+	<div class="carousel"> 
+	<div class="slides" id="slides"> 
+	<img src="https://picsum.photos/id/1015/800/450" alt=""> 
+	<img src="https://picsum.photos/id/1016/800/450" alt=""> 
+	<img src="https://picsum.photos/id/1018/800/450" alt=""> 
+	<img src="https://picsum.photos/id/1020/800/450" alt=""> 
+	</div>
+	</div> 
+	
+	<script> const slides = document.getElementById('slides'); const totalSlides = slides.children.length; let index = 0; 
+	function autoScroll(){ index++; if(index >= totalSlides){ index = 0; } slides.style.transform = `translateX(-${index * 100}%)`; } 
+	setInterval(autoScroll, 3000); </script>
 
-   		 <img src="https://www.mastercase.mx/1049/2026/proximamente/mx/2/1.png" height="300px" id="1" alt="" />     		 
-		 <img src="https://www.mastercase.mx/1049/2026/proximamente/mx/2/2.png" height="300px" id="1" alt="" />  
 
-	     <h1>Men's  Sizes: L/XL/XXL  </h1>
- <img id="myImage" src="https://www.mastercase.mx/1049/proximamente.gif" style="height:80px">
+
+
+
+
 
 	   </td>
 
