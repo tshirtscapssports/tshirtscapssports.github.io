@@ -32,16 +32,56 @@
 
  
 
-<style> 
-*{ margin:0; padding:0; 
-box-sizing:border-box; } 
-
-.carousel{ width:800px; height:450px; overflow:hidden; border-radius:20px; position:relative; box-shadow:0 10px 30px rgba(0,0,0,0.5); } 
-.slides{ display:flex; width:100%; height:100%; transition:transform 0.8s ease-in-out; } 
-.slides img{ width:100%; height:100%; object-fit:cover; flex-shrink:0; } </style>
-
-
 <style>
+
+
+
+.carousel {
+  width: 600px;
+  overflow: hidden;
+  border: 5px solid transparent; 
+  border-radius: 20px;
+  background-image: linear-gradient(#825CFF, #825CFF), 
+                    linear-gradient(90deg, #ff7eb3, #ff758c, #825CFF);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+}
+
+.wrap {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 250px;
+  justify-items: stretch;
+  animation: slide 15s linear infinite;
+  animation-play-state: running;
+}
+
+.wrap img {
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.wrap img:hover {
+  transform: scale(1.1); 
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.8), 0 4px 20px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.8); 
+}
+
+.wrap:hover {
+  animation-play-state: paused;
+}
+
+@keyframes slide {
+  to {
+    translate: calc(-4 * 250px);
+  }
+}</style>
 
  
 
@@ -1136,20 +1176,19 @@ thumbs.forEach(thumb => {
 	
 	
 	
-	<div class="carousel"> 
-	<div class="slides" id="slides"> 
-	<img src="https://picsum.photos/id/1015/800/450" alt=""> 
-	<img src="https://picsum.photos/id/1016/800/450" alt=""> 
-	<img src="https://picsum.photos/id/1018/800/450" alt=""> 
-	<img src="https://picsum.photos/id/1020/800/450" alt=""> 
-	</div>
-	</div> 
-	
-	<script> const slides = document.getElementById('slides'); const totalSlides = slides.children.length; let index = 0; 
-	function autoScroll(){ index++; if(index >= totalSlides){ index = 0; } slides.style.transform = `translateX(-${index * 100}%)`; } 
-	setInterval(autoScroll, 3000); </script>
-
-
+<div class="carousel">
+        <div class="wrap">
+            <img src="https://www.codewithfaraz.com/img/code%20with%20Faraz-1.jpg" alt="">
+            <img src="https://www.codewithfaraz.com/img/code%20with%20Faraz-2.jpg" alt="">
+            <img src="https://www.codewithfaraz.com/img/code%20with%20Faraz-3.jpg" alt="">
+            <img src="https://www.codewithfaraz.com/img/code%20with%20Faraz-4.jpg" alt="">
+            <img src="https://www.codewithfaraz.com/img/code%20with%20Faraz-1.jpg" alt="">
+            <img src="https://www.codewithfaraz.com/img/code%20with%20Faraz-2.jpg" alt="">
+            <img src="https://www.codewithfaraz.com/img/code%20with%20Faraz-3.jpg" alt="">
+            <img src="https://www.codewithfaraz.com/img/code%20with%20Faraz-4.jpg" alt="">
+        </div>
+    </div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"d59b9228c484470481f0fbca64f1131c","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 
 
 
