@@ -33,6 +33,60 @@
  
 
  
+<style>
+
+
+
+.carousel {
+  width: 800px;
+  overflow: hidden;
+  border: 5px solid transparent; 
+  border-radius: 20px;
+  background-image: #ffffff;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+}
+
+.wrap {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 250px;
+  justify-items: stretch;
+  animation: slide 15s linear infinite;
+  animation-play-state: running;
+}
+
+.wrap img {
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.wrap img:hover {
+  transform: scale(1.1); 
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.8), 0 4px 20px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.8); 
+}
+
+.wrap:hover {
+  animation-play-state: paused;
+}
+
+@keyframes slide {
+  to {
+    translate: calc(-4 * 250px);
+  }
+}
+
+</style>
+
+
+ 
 
 <script>
 
@@ -900,7 +954,35 @@ $(document).ready(function () {
  
 
 
+ 
+  <br /> <br />
+ 	
+<div align="center" style="width: 100%;">
+ 	
+<div class="carousel">
+        <div class="wrap">
+            <a href="mx1[cap][mlb].html"><img src="https://www.mastercase.mx/1049/2026/proximamente/caps/mx/1/1.png" alt=""></a>
+            <a href="mx2[cap][mlb].html"><img src="https://www.mastercase.mx/1049/2026/proximamente/caps/mx/2/1.png" alt=""></a>
+            <a href="mx3[cap][mlb].html"><img src="https://www.mastercase.mx/1049/2026/proximamente/caps/mx/3/1.png" alt=""></a>
+            <a href="mx4[cap][mlb].html"><img src="https://www.mastercase.mx/1049/2026/proximamente/caps/mx/4/1.png" alt=""></a>
+            <a href="mx5[cap][mlb].html"><img src="https://www.mastercase.mx/1049/2026/proximamente/caps/mx/5/1.png" alt=""></a>
+            <a href="mx6[cap][mlb].html"><img src="https://www.mastercase.mx/1049/2026/proximamente/caps/mx/6/1.png" alt=""></a>
+            <a href="mx7[cap][mlb].html"><img src="https://www.mastercase.mx/1049/2026/proximamente/caps/mx/7/1.png" alt=""></a>
+            <a href="mx8[cap][mlb].html"><img src="https://www.mastercase.mx/1049/2026/proximamente/caps/mx/8/1.png" alt=""></a>
+		 <a href="mx9[cap][mlb].html"><img src="https://www.mastercase.mx/1049/2026/proximamente/caps/mx/9/1.png" alt=""></a>
+		 <a href="mx10[cap][mlb].html"><img src="https://www.mastercase.mx/1049/2026/proximamente/caps/mx/10/1.png" alt=""></a>
 
+        </div>
+    </div>
+	
+</div>	
+	
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"d59b9228c484470481f0fbca64f1131c","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+
+
+
+
+ <br /> <br />
 
  
 
